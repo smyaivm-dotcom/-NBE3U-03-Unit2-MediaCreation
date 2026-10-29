@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Critical Engagement & Analysis Portfolio | Soumaiya Ismail</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                800: "#163322",
+                900: "#0d1f14",
+              },
+              parchment: "#f8f6f0",
+              parchmentDark: "#f0ece1",
+              gold: "#c29b38",
+              goldDark: "#a17d2a",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #f8f6f0;
+        color: #2b2b2b;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
+      .editorial-header {
+        background: linear-gradient(
+            135deg,
+            rgba(13, 31, 20, 0.95),
+            rgba(22, 51, 34, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1920&q=80")
+            center/cover no-repeat;
+      }
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .glass-pill {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(194, 155, 56, 0.25);
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #c29b38;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-parchment text-gray-800 min-h-screen flex flex-col selection:bg-gold selection:text-white"
+  >
+    <!-- Academic Header -->
+    <header
+      class="editorial-header text-white py-16 px-4 sm:px-8 shadow-2xl border-b-4 border-gold relative overflow-hidden"
+    >
+      <div
+        class="absolute -right-20 -bottom-20 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div class="max-w-5xl mx-auto text-center relative z-10 space-y-4">
+        <div
+          class="inline-flex items-center space-x-2 bg-gold text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md"
+        >
+          <i class="fa-solid fa-feather-pointed"></i>
+          <span>NBE3U Critical Engagement & Analysis Assignment</span>
+        </div>
+        <h1
+          class="text-4xl sm:text-6xl font-serif font-bold tracking-tight text-emerald-50"
+        >
+          Reclaimed by the Earth
+        </h1>
+        <p class="text-xl sm:text-2xl text-emerald-100 font-serif italic">
+          <span class="italic">"Mother Earth"</span> by Chief R. Stacey Laforme
+        </p>
+        <p class="text-sm text-emerald-200 font-medium pt-2">
+          Soumaiya Ismail | NBE3U-03 | Teacher: Mrs. Wreford
+        </p>
+      </div>
+    </header>
+
+    <!-- Floating Glassmorphism Pill Navigation Bar -->
+    <nav class="sticky top-4 z-50 max-w-5xl mx-auto px-4 w-full">
+      <div
+        class="glass-pill rounded-2xl shadow-xl p-2 flex justify-start sm:justify-center overflow-x-auto space-x-2 custom-scrollbar"
+      >
+        <button
+          onclick="switchTab(event, 'tab-poem')"
+          class="nav-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center space-x-2 bg-forest-800 text-white shadow-md shrink-0"
+        >
+          <i class="fa-solid fa-seedling text-gold"></i>
+          <span>Poem & Planner</span>
+        </button>
+        <button
+          onclick="switchTab(event, 'tab-reflections')"
+          class="nav-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center space-x-2 text-forest-800 hover:bg-forest-50 shrink-0"
+        >
+          <i class="fa-solid fa-comments text-gold"></i>
+          <span>Reflection & Inquiry</span>
+        </button>
+        <button
+          onclick="switchTab(event, 'tab-literary')"
+          class="nav-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center space-x-2 text-forest-800 hover:bg-forest-50 shrink-0"
+        >
+          <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+          <span>Critical Literacy</span>
+        </button>
+        <button
+          onclick="switchTab(event, 'tab-journal')"
+          class="nav-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center space-x-2 text-forest-800 hover:bg-forest-50 shrink-0"
+        >
+          <i class="fa-solid fa-book-open text-gold"></i>
+          <span>Journal</span>
+        </button>
+        <button
+          onclick="switchTab(event, 'tab-works')"
+          class="nav-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center space-x-2 text-forest-800 hover:bg-forest-50 shrink-0"
+        >
+          <i class="fa-solid fa-bookmark text-gold"></i>
+          <span>References</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Editorial Content Area -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex-grow w-full">
+      <!-- TAB 1: POEM & PLANNER -->
+      <section id="tab-poem" class="tab-content active space-y-10">
+        <!-- Visual Editorial Banner with Image -->
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 border border-emerald-900/10"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80"
+            alt="Ancient Forest Landscape"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-forest-900/95 via-forest-900/40 to-transparent flex items-end p-6 sm:p-10"
+          >
+            <div class="space-y-2">
+              <span
+                class="bg-gold text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full inline-block shadow-sm"
+                >Planner</span
+              >
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                <span class="italic">"Mother Earth"</span>
+              </h2>
+              <p class="text-emerald-200 text-sm">
+                Chief R. Stacey Laforme • Critical Analysis
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Idea Analytical Card -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div
+            class="border-b border-gray-100 pb-4 flex items-center justify-between"
+          >
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-gold"
+                >MAIN IDEA</span
+              >
+              <h3 class="text-2xl font-serif font-bold text-forest-800">
+                What is the main idea of this piece?
+              </h3>
+            </div>
+            <div
+              class="w-12 h-12 rounded-2xl bg-forest-50 text-gold flex items-center justify-center text-xl shadow-inner"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div
+              class="bg-forest-50/70 p-6 rounded-2xl border border-emerald-100 space-y-3"
+            >
+              <div
+                class="flex items-center space-x-2 text-forest-800 font-bold"
+              >
+                <i class="fa-solid fa-file-contract text-gold"></i>
+                <span>The speaker's idea</span>
+              </div>
+              <p class="text-gray-700 leading-relaxed text-sm">
+                At the start, legal documents are believed to give ownership.
+                The older man challenges this by stating how the earth has
+                always provided the necessity of life and that the earth will
+                outlive the one being spoken to.
+              </p>
+            </div>
+            <div
+              class="bg-amber-50/60 p-6 rounded-2xl border border-amber-200/60 space-y-3"
+            >
+              <div
+                class="flex items-center space-x-2 text-forest-800 font-bold"
+              >
+                <i class="fa-solid fa-mountain-sun text-gold"></i>
+                <span>The Older Man's Challenge</span>
+              </div>
+              <p class="text-gray-700 leading-relaxed text-sm">
+                The older man challenges this by stating how the earth has
+                always provided the necessity of life and that the earth will
+                outlive the one being spoken to.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-emerald-900 text-emerald-50 p-6 rounded-2xl shadow-md border-l-4 border-gold space-y-2"
+          >
+            <span
+              class="text-xs font-bold uppercase tracking-wider text-gold block"
+              >The Main Idea</span
+            >
+            <p class="font-serif text-lg leading-relaxed">
+              The main idea uncovers the difference between legally claiming
+              ownership of land versus understanding the relationship between
+              the Earth and the people who depend on it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Supporting Details & Quotes Grid with Visual Imagery -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div
+            class="lg:col-span-2 bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+          >
+            <div class="border-b border-gray-100 pb-4">
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-gold"
+                >Evidence</span
+              >
+              <h3 class="text-2xl font-serif font-bold text-forest-800">
+                Supporting Details & Quotes
+              </h3>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                class="border-l-4 border-gold bg-amber-50/40 p-4 rounded-r-2xl shadow-sm"
+              >
+                <p class="italic text-gray-900 font-serif text-base mb-1">
+                  "This land provides me with economic prosperity" (Laforme 14).
+                </p>
+              </div>
+
+              <div
+                class="border-l-4 border-gold bg-amber-50/40 p-4 rounded-r-2xl shadow-sm space-y-1"
+              >
+                <p class="italic text-gray-900 font-serif text-base">
+                  Land is seen as a source of money, describing it as "When I
+                  look upon this land it is money / as far as the eye can see"
+                  (Laforme 14).
+                </p>
+                <p class="text-xs text-forest-800 font-medium pt-1">
+                  → This reveals that his perspective is solely based on profit
+                  and materialistic value.
+                </p>
+              </div>
+
+              <div
+                class="border-l-4 border-gold bg-amber-50/40 p-4 rounded-r-2xl shadow-sm space-y-1"
+              >
+                <p class="italic text-gray-900 font-serif text-base">
+                  "The old man looked at me with the saddest eyes / Bent and
+                  picked up a handful of dirt / and said, you actually believe
+                  those lies" (Laforme 14).
+                </p>
+                <p class="text-xs text-forest-800 font-medium pt-1">
+                  → The old man challenges the idea that a piece of paper can
+                  give connection to land.
+                </p>
+              </div>
+
+              <div
+                class="border-l-4 border-gold bg-amber-50/40 p-4 rounded-r-2xl shadow-sm space-y-1"
+              >
+                <p class="italic text-gray-900 font-serif text-base">
+                  "This gave life to you and me / And provided for everything
+                  you have and / everything you see" (Laforme 15).
+                </p>
+                <p class="text-xs text-forest-800 font-medium pt-1">
+                  → Land is essential to life, it is beyond currency.
+                </p>
+              </div>
+
+              <div
+                class="border-l-4 border-gold bg-amber-50/40 p-4 rounded-r-2xl shadow-sm space-y-1"
+              >
+                <p class="italic text-gray-900 font-serif text-base mb-1">
+                  "This is the reason for our birth" (Laforme 15).
+                </p>
+                <small class="text-xs text-gray-600 block"
+                  >Hence the name, “Mother Earth.”</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Infographic Card with Image & MESSAGE/THEME Box -->
+          <div class="space-y-6">
+            <div
+              class="rounded-3xl overflow-hidden shadow-lg border border-emerald-900/10 h-64 relative"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+                alt="Earth and Soil"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-forest-900/90 to-transparent flex items-end p-6"
+              >
+                <p class="text-xs text-emerald-100 font-medium">
+                  Earth is not something for humans to control or profit in. We
+                  are beneficiaries, not permanent owners.
+                </p>
+              </div>
+            </div>
+
+            <!-- MESSAGE/THEME Separate Box -->
+            <div
+              class="bg-forest-900 text-emerald-50 rounded-3xl p-6 shadow-md border-t-4 border-gold space-y-3"
+            >
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-gold block"
+                >MESSAGE/THEME</span
+              >
+              <p class="text-sm leading-relaxed text-emerald-100">
+                Earth is not for humans to control/profit in. It existed before
+                us, provides the necessities we need to live, and will continue
+                to even after our lives have ended. We are beneficiaries of the
+                earth, not permanent owners, and we need to recognize our
+                responsibility to care for something that sustains us and will
+                sustain those to come.
+              </p>
+            </div>
+
+            <div
+              class="bg-white rounded-3xl p-6 shadow-sm border border-emerald-900/10 space-y-4"
+            >
+              <h4
+                class="font-serif font-bold text-forest-800 text-lg border-b pb-2"
+              >
+                Topics & Vocabulary
+              </h4>
+              <p class="text-xs text-gray-700 leading-relaxed">
+                <strong>Topics:</strong> Land, ownership, authority, economics,
+                humans, nature, connection to land, life and death,
+                responsibility to land.
+              </p>
+              <div class="bg-gray-50 p-3 rounded-xl text-xs text-gray-600">
+                <strong>Vocabulary:</strong> There was no unfamiliar vocabulary.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: REFLECTION & INQUIRY -->
+      <section id="tab-reflections" class="tab-content space-y-10">
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 border border-emerald-900/10"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80"
+            alt="Nature and Reflection"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-forest-900/95 via-forest-900/40 to-transparent flex items-end p-6 sm:p-10"
+          >
+            <div class="space-y-2">
+              <span
+                class="bg-gold text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full inline-block shadow-sm"
+                >Reflect</span
+              >
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                Reflection & Inquiry
+              </h2>
+              <p class="text-emerald-200 text-sm"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Connections Grid -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Connections</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              Personal connections I bring to this piece
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div
+              class="bg-forest-50/60 p-5 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <div class="text-gold font-bold text-sm flex items-center">
+                <i class="fa-solid fa-coins mr-2"></i>Value by Profit
+              </div>
+              <p class="text-gray-700 text-sm">
+                People often measure something’s value by profit, rather than
+                what it means/provides for them.
+              </p>
+            </div>
+            <div
+              class="bg-forest-50/60 p-5 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <div class="text-gold font-bold text-sm flex items-center">
+                <i class="fa-solid fa-eye mr-2"></i>Values & History
+              </div>
+              <p class="text-gray-700 text-sm">
+                Based on our values and history, we see things differently.
+              </p>
+            </div>
+            <div
+              class="bg-forest-50/60 p-5 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <div class="text-gold font-bold text-sm flex items-center">
+                <i class="fa-solid fa-file-lines mr-2"></i>Paper = Proof
+              </div>
+              <p class="text-gray-700 text-sm">
+                We often view: written on paper = proof/right.
+              </p>
+            </div>
+            <div
+              class="bg-forest-50/60 p-5 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <div class="text-gold font-bold text-sm flex items-center">
+                <i class="fa-solid fa-triangle-exclamation mr-2"></i>Taking for
+                Granted
+              </div>
+              <p class="text-gray-700 text-sm">
+                People take things for granted, even those things which we are
+                reliant on (commodity).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What I fully understand and I am comfortable discussing -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Understanding</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              What I fully understand and I am comfortable discussing
+            </h3>
+          </div>
+
+          <div class="space-y-4 text-gray-700 text-sm leading-relaxed">
+            <p>
+              • The questioned one believes a legal document can give them
+              ownership over a land.
+            </p>
+            <p>
+              • The old man argues that the earth has no owners when it is the
+              one who gives.
+            </p>
+            <p>
+              • Ownership is believed to be controlling the land, which the old
+              man argues, how can you own a thing whose lifespan extends beyond
+              yours, coming before you and its material being the same thing to
+              bury you. -
+              <span class="italic">”and will ever be”</span> (Laforme 15).
+            </p>
+            <div
+              class="bg-emerald-50/70 p-6 rounded-2xl border border-emerald-200 space-y-3"
+            >
+              <p class="font-medium text-forest-800">
+                • The earth sustains us during our lives, and through natural
+                decomposition, our bodies return nutrients to the soil and the
+                wider ecosystem.
+              </p>
+              <p class="text-xs text-gray-600">
+                (This is interesting because “reclaim” does not only mean being
+                buried, it gives me the idea that we use earth's resources like
+                our own, but at the end of our lives, our bodies' decomposition
+                actually help soil and the ecosystem around that area, although
+                most countries do not allow burial without a coffin or toxins,
+                but I did find it interesting how our nature and the system
+                allows for that, without laws.)
+              </p>
+              <a
+                href="https://www.serenityridgemd.com/the-impact-of-natural-burial-on-local-ecosystems-2/"
+                target="_blank"
+                class="text-xs font-semibold text-gold hover:underline inline-flex items-center"
+              >
+                <i class="fa-solid fa-external-link-alt mr-1.5"></i>Serenity
+                Ridge: The Impact of Natural Burial on Local Ecosystems
+              </a>
+            </div>
+            <p>
+              • The old man is trying to make the point that we rely on earth
+              just as a baby relies on its mother for care, nourishment, and a
+              relationship, hence the title “Mother Earth.”
+            </p>
+          </div>
+        </div>
+
+        <!-- New Concepts & Literary Connections -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-3xl p-8 shadow-sm border border-emerald-900/10 space-y-4"
+          >
+            <h4
+              class="font-serif font-bold text-forest-800 text-xl border-b pb-2"
+            >
+              New or Unfamiliar Concepts
+            </h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              One concept I want to understand better is how different
+              Indigenous Nations understand their relationship with land. This
+              poem introduces a perspective that differs from treating land
+              mainly as property, but I know that Indigenous people have
+              distinct cultures, customs, history, and belief.
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-3xl p-8 shadow-sm border border-emerald-900/10 space-y-4"
+          >
+            <h4
+              class="font-serif font-bold text-forest-800 text-xl border-b pb-2"
+            >
+              Literary Connection
+            </h4>
+            <p class="text-gray-700 text-sm leading-relaxed">
+              I can connect this to
+              <span class="italic"
+                >Walking Both Sides of an Invisible Border</span
+              >
+              by Alootook Ipellie because both poems speak about a person's
+              lived experience and the expectations imposed upon them. Alootook
+              Ipellie’s poem focuses on cultural identity and living between two
+              cultures, while Laforme focuses on deep connection to land and
+              legal claims deemed sufficient by society.
+            </p>
+          </div>
+        </div>
+
+        <!-- Perspectives, ideas, and feelings I bring to this piece -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Stance</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              Perspectives, ideas, and feelings I bring to this piece
+            </h3>
+          </div>
+          <div
+            class="bg-amber-50/50 p-6 rounded-2xl border border-amber-200/50 space-y-3"
+          >
+            <p class="font-semibold text-forest-800">
+              Feelings: Frustration, sadness, concern
+            </p>
+            <ul class="list-disc pl-5 space-y-1.5 text-gray-700 text-sm">
+              <li>Legal claim does not equal connection to the land.</li>
+              <li>
+                Earth’s value is beyond currency/profit. It gives things that
+                cannot be replaced.
+              </li>
+              <li>You owe the earth, not own.</li>
+              <li>
+                The old man speaks from a perspective which makes people owe the
+                earth, considering all that it gives us.
+              </li>
+              <li>
+                The challenged one speaks from a perspective that believes legal
+                papers give him the right to control the land.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Inquiry Section: Top 5 Questions -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Inquiry</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              Top 5 Questions
+            </h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Click any question below to expand the research answer and
+              verified sources.
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Q1 -->
+            <div
+              class="border border-emerald-200 rounded-2xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleAccordion('qa-1')"
+                class="w-full bg-forest-50 p-5 text-left font-serif font-bold text-forest-800 flex justify-between items-center hover:bg-forest-100 transition"
+              >
+                <span class="flex items-center text-sm sm:text-base"
+                  ><i class="fa-solid fa-circle-question text-gold mr-3"></i
+                  >Question 1: What is the difference between legal ownership
+                  and Indigenous land ownership?</span
+                >
+                <i
+                  id="icon-qa-1"
+                  class="fa-solid fa-chevron-down text-forest-800 transition-transform"
+                ></i>
+              </button>
+              <div
+                id="qa-1"
+                class="hidden p-6 bg-white border-t border-emerald-100 space-y-4 text-sm text-gray-700"
+              >
+                <p>
+                  <strong>ANSWER:</strong> Legal ownership can be given through
+                  a land registration system. The land system of a given
+                  province, for example, Ontario, contains all the information
+                  about ownership of the specific piece of property and other
+                  rights that may be associated with it. Aboriginal title,
+                  however, differs from that as it is a collective right that
+                  secures an Indigenous group’s ownership of land. Aboriginal
+                  title includes the right to occupy, possess, and use the
+                  property and receive any economic benefit from it. The exact
+                  rights of aboriginal title may depend on legal and historical
+                  factors, and there are Indigenous peoples’ land rights that
+                  can be found as treaties.
+                </p>
+                <div class="pt-2 border-t border-gray-100 text-xs space-y-1">
+                  <p class="font-semibold text-forest-800">Sources:</p>
+                  <a
+                    href="https://www.ontario.ca/page/overview-land-registry"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://www.ontario.ca/page/overview-land-registry</a
+                  >
+                  <a
+                    href="https://canada.justice.gc.ca/eng/csj-sjc/principles-principes.html"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://canada.justice.gc.ca/eng/csj-sjc/principles-principes.html</a
+                  >
+                  <a
+                    href="https://www.rcaanc-cirnac.gc.ca/eng/1100100028574-/1529354437231"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://www.rcaanc-cirnac.gc.ca/eng/1100100028574-/1529354437231</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div
+              class="border border-emerald-200 rounded-2xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleAccordion('qa-2')"
+                class="w-full bg-forest-50 p-5 text-left font-serif font-bold text-forest-800 flex justify-between items-center hover:bg-forest-100 transition"
+              >
+                <span class="flex items-center text-sm sm:text-base"
+                  ><i class="fa-solid fa-circle-question text-gold mr-3"></i
+                  >Question 2: Who has the authority to decide what happens to
+                  land?</span
+                >
+                <i
+                  id="icon-qa-2"
+                  class="fa-solid fa-chevron-down text-forest-800 transition-transform"
+                ></i>
+              </button>
+              <div
+                id="qa-2"
+                class="hidden p-6 bg-white border-t border-emerald-100 space-y-4 text-sm text-gray-700"
+              >
+                <p>
+                  <strong>ANSWER:</strong> The answer depends on the land and
+                  the rights that apply to that land. Where aboriginal title is
+                  proven, the Indigenous that owns the title has the right to
+                  decide how that land is used and managed including for modern
+                  uses. The title is subject to the rule that the land cannot be
+                  developed in a way that takes away benefits from generations.
+                  Although the governments also have authority, they have the
+                  duty to talk with Indigenous groups, and where needed, make
+                  adjustments when government decisions might harm claimed,
+                  proven Aboriginal, or treaty rights. This means that decisions
+                  about land cannot always be seen as something one person or
+                  government has control over, rather, they all work together to
+                  ensure a safe place for all.
+                </p>
+                <div class="pt-2 border-t border-gray-100 text-xs space-y-1">
+                  <p class="font-semibold text-forest-800">Sources:</p>
+                  <a
+                    href="https://www.ontario.ca/page/indigenous-land-claims-consultation-process"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://www.ontario.ca/page/indigenous-land-claims-consultation-process</a
+                  >
+                  <a
+                    href="https://canada.justice.gc.ca/eng/csj-sjc/principles-principes.html"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://canada.justice.gc.ca/eng/csj-sjc/principles-principes.html</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div
+              class="border border-emerald-200 rounded-2xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleAccordion('qa-3')"
+                class="w-full bg-forest-50 p-5 text-left font-serif font-bold text-forest-800 flex justify-between items-center hover:bg-forest-100 transition"
+              >
+                <span class="flex items-center text-sm sm:text-base"
+                  ><i class="fa-solid fa-circle-question text-gold mr-3"></i
+                  >Question 3: Where in Canada is economics clashing with
+                  Indigenous rights?</span
+                >
+                <i
+                  id="icon-qa-3"
+                  class="fa-solid fa-chevron-down text-forest-800 transition-transform"
+                ></i>
+              </button>
+              <div
+                id="qa-3"
+                class="hidden p-6 bg-white border-t border-emerald-100 space-y-4 text-sm text-gray-700"
+              >
+                <p>
+                  <strong>ANSWER:</strong> In the Wet’suwet’en territory in
+                  British Columbia, there have been debates regarding the
+                  Indigenous rights and title to the land, particularly in
+                  regards to the Coastal GasLink pipeline. This issue gained
+                  public attention in March 2020 when the federal government,
+                  the provincial government of British Columbia, and hereditary
+                  chiefs issued a joint statement about the discussion on
+                  Wet’suwet’en rights and titles. Specifically, it mentioned
+                  recognition of rights and title over the territory and the
+                  issues associated with Coastal GasLink pipeline.
+                </p>
+                <div class="pt-2 border-t border-gray-100 text-xs space-y-1">
+                  <p class="font-semibold text-forest-800">Sources:</p>
+                  <a
+                    href="https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2020/03/joint-statement-on-discussions-on-wetsuweten-rights-and-title.html"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2020/03/joint-statement-on-discussions-on-wetsuweten-rights-and-title.html</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div
+              class="border border-emerald-200 rounded-2xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleAccordion('qa-4')"
+                class="w-full bg-forest-50 p-5 text-left font-serif font-bold text-forest-800 flex justify-between items-center hover:bg-forest-100 transition"
+              >
+                <span class="flex items-center text-sm sm:text-base"
+                  ><i class="fa-solid fa-circle-question text-gold mr-3"></i
+                  >Question 4: When did the Canadian government recognize
+                  existing treaty rights in the Constitution?</span
+                >
+                <i
+                  id="icon-qa-4"
+                  class="fa-solid fa-chevron-down text-forest-800 transition-transform"
+                ></i>
+              </button>
+              <div
+                id="qa-4"
+                class="hidden p-6 bg-white border-t border-emerald-100 space-y-4 text-sm text-gray-700"
+              >
+                <p>
+                  <strong>ANSWER:</strong> The Constitution Act, 1982,
+                  recognized and affirmed existing Aboriginal and treaty rights
+                  in Section 35, giving them recognition in Canadian law.
+                </p>
+                <div class="pt-2 border-t border-gray-100 text-xs space-y-1">
+                  <p class="font-semibold text-forest-800">Sources:</p>
+                  <a
+                    href="https://laws-lois.justice.gc.ca/eng/const/page-12.html#h-41"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://laws-lois.justice.gc.ca/eng/const/page-12.html#h-41</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div
+              class="border border-emerald-200 rounded-2xl overflow-hidden shadow-sm"
+            >
+              <button
+                onclick="toggleAccordion('qa-5')"
+                class="w-full bg-forest-50 p-5 text-left font-serif font-bold text-forest-800 flex justify-between items-center hover:bg-forest-100 transition"
+              >
+                <span class="flex items-center text-sm sm:text-base"
+                  ><i class="fa-solid fa-circle-question text-gold mr-3"></i
+                  >Question 5: What does the paper represent in real life?</span
+                >
+                <i
+                  id="icon-qa-5"
+                  class="fa-solid fa-chevron-down text-forest-800 transition-transform"
+                ></i>
+              </button>
+              <div
+                id="qa-5"
+                class="hidden p-6 bg-white border-t border-emerald-100 space-y-4 text-sm text-gray-700"
+              >
+                <p>
+                  <strong>ANSWER:</strong> In real life, the paper can represent
+                  a registered land title. Ontario’s land registry contains
+                  official records of property ownership and other legal things
+                  like mortgages, transfers, and leases. Obtaining one means
+                  legal proof of ownership of the land and general control of
+                  the land. (now online)
+                </p>
+                <div class="pt-2 border-t border-gray-100 text-xs space-y-1">
+                  <p class="font-semibold text-forest-800">Sources:</p>
+                  <a
+                    href="https://www.ontario.ca/page/overview-land-registry"
+                    target="_blank"
+                    class="text-gold hover:underline block truncate"
+                    ><i class="fa-solid fa-link mr-1"></i
+                    >https://www.ontario.ca/page/overview-land-registry</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: CRITICAL LITERACY -->
+      <section id="tab-literary" class="tab-content space-y-10">
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 border border-emerald-900/10"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&w=1400&q=80"
+            alt="Critical Literacy"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-forest-900/95 via-forest-900/40 to-transparent flex items-end p-6 sm:p-10"
+          >
+            <div class="space-y-2">
+              <span
+                class="bg-gold text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full inline-block shadow-sm"
+                >Critical Literacy</span
+              >
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                Critical Literacy & Devices
+              </h2>
+              <p class="text-emerald-200 text-sm"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Critical Literacy Elements -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Critical Literacy</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              Critical Literacy Analysis
+            </h3>
+          </div>
+
+          <div class="space-y-6 text-sm text-gray-700">
+            <div
+              class="bg-forest-50/60 p-6 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                The intended audience
+              </h4>
+              <p class="leading-relaxed">
+                I think this piece is aimed towards those who think land is a
+                means of ownership and transactions or those who need/are
+                looking for enlightenment. This is because of the final line,
+                <span class="italic">“But we both know who owns who,”</span>
+                (Laforme 15) begins a question in the reader's mind, forcing
+                them to reflect on their own values and possibly adopt new,
+                accurate ones.
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                The overall tone
+              </h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  Sounds very confrontational, interrogative, and “saddest eyes”
+                  reflect disappointment.
+                </li>
+                <li>
+                  The irony in
+                  <span class="italic">“But we both know who owns who.”</span>
+                  (Laforme 15) makes someone reflect and renew their
+                  perspective.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-forest-50/60 p-6 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                The purpose of this poem
+              </h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  I believe the purpose of this poem is to challenge the belief
+                  that owning land legally means having control over it.
+                </li>
+                <li>
+                  Presents two perspectives from two people (this could possibly
+                  represent colonizer vs an Indigenous person), giving readers
+                  the opportunity to see both points of views and decide which
+                  is most humane according to their values.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                How language (diction) is used in
+                <span class="italic">“Mother Earth”</span>
+              </h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  The author makes the old man use philosophic language to fix
+                  the speaker's perspective.
+                </li>
+                <li>
+                  <span class="italic">“money as far as the eye can see”</span>
+                  (Laforme 14) shows that the speaker measures the value of land
+                  through its potential profit.
+                </li>
+                <li>
+                  <span class="italic">“one day reclaim you”</span> (Laforme 15)
+                  suggests that the earth will eventually take humans back into
+                  its natural cycle.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-forest-50/60 p-6 rounded-2xl border border-emerald-100 space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                Does Chief R. Stacey Laforme have any identifiable bias or sway
+                of thought and how does that change the way that we understand
+                the topic?
+              </h4>
+              <p class="leading-relaxed">
+                The old man’s perspective takes the majority of the poem. This
+                changes the way we understand the topic because the author only
+                goes into depth on one topic, highlighting all the old man’s
+                thoughts. Chief R. Stacey Laforme is known to be a distinguished
+                poet and storyteller from the MCFN, going back to what I
+                mentioned earlier, I think that the old man represents the
+                Indigenous communities, which is why I think Laformes gives
+                emphasis on his part in order to share his own perspectives
+                through a character.
+              </p>
+            </div>
+
+            <div
+              class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-2"
+            >
+              <h4 class="font-serif font-bold text-forest-800 text-lg">
+                How the poem is written/structured and why it matters
+              </h4>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Dialogue/conversation between two people</li>
+                <li>Rhymes</li>
+                <li>Sounds like a story</li>
+              </ul>
+              <p class="mt-2 leading-relaxed">
+                This matters because a dialogue allows for two perspectives,
+                which helps us consider both sides. The rhythm and story-like
+                format makes it seem like it is directed towards a broader
+                audience, whether those seeking more knowledge on Indigenous
+                communities or those who like to read. Unlike a “venting” poem
+                which does not necessarily target readers' understanding.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Literary Devices Breakdown -->
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >Literary Devices</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              Persuasive & Literary Devices
+            </h3>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Device 1 -->
+            <div
+              class="bg-amber-50/40 p-6 rounded-2xl border border-amber-200/50 space-y-3 shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <h4 class="font-serif font-bold text-forest-800 text-xl">
+                  1. Irony
+                </h4>
+                <span
+                  class="bg-gold text-white text-xs font-semibold px-3 py-1 rounded-full"
+                  >Device</span
+                >
+              </div>
+              <p
+                class="italic font-serif text-forest-800 bg-white p-4 rounded-xl border border-amber-200 text-base"
+              >
+                “But we both know who owns who.” (Laforme 15)
+              </p>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                This switches the initial perspective at the beginning of the
+                poem, making readers think into their own values. Although you
+                may have believed that you own/control the land, we all know by
+                the time this statement is given that humans are dependent on
+                the earth, therefore, it is not something we have the authority
+                to control.
+              </p>
+            </div>
+
+            <!-- Device 2 -->
+            <div
+              class="bg-amber-50/40 p-6 rounded-2xl border border-amber-200/50 space-y-3 shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <h4 class="font-serif font-bold text-forest-800 text-xl">
+                  2. Personification
+                </h4>
+                <span
+                  class="bg-gold text-white text-xs font-semibold px-3 py-1 rounded-full"
+                  >Device</span
+                >
+              </div>
+              <p
+                class="italic font-serif text-forest-800 bg-white p-4 rounded-xl border border-amber-200 text-base"
+              >
+                “The Earth nurtures you and will one day reclaim you” (Laforme
+                15)
+              </p>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Earth is described as something that can nurture and reclaim
+                people. To readers this creates the sense that earth is its own
+                separate being with its own will. It is not something we can
+                control.
+              </p>
+            </div>
+
+            <!-- Device 3 -->
+            <div
+              class="bg-amber-50/40 p-6 rounded-2xl border border-amber-200/50 space-y-3 shadow-sm"
+            >
+              <div class="flex items-center justify-between">
+                <h4 class="font-serif font-bold text-forest-800 text-xl">
+                  3. Metaphor
+                </h4>
+                <span
+                  class="bg-gold text-white text-xs font-semibold px-3 py-1 rounded-full"
+                  >Device</span
+                >
+              </div>
+              <p
+                class="italic font-serif text-forest-800 bg-white p-4 rounded-xl border border-amber-200 text-base"
+              >
+                “When I look upon this land it is money” (Laforme 15)
+              </p>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                The speaker describes the land as if it is money itself, showing
+                that there is its value through profit. Though the land itself
+                is not literally money; this metaphor shows how the speaker is
+                reducing the earth to an economic benefit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: JOURNAL -->
+      <section id="tab-journal" class="tab-content space-y-10">
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 border border-emerald-900/10"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1400&q=80"
+            alt="Journal Reflection"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-forest-900/95 via-forest-900/40 to-transparent flex items-end p-6 sm:p-10"
+          >
+            <div class="space-y-2">
+              <span
+                class="bg-gold text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full inline-block shadow-sm"
+                >Journal</span
+              >
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                Journal
+              </h2>
+              <p class="text-emerald-200 text-sm"></p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-14 shadow-sm border border-emerald-900/10 space-y-8"
+        >
+          <div
+            class="border-b border-gray-100 pb-4 flex items-center justify-between"
+          >
+            <div>
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-gold"
+                >Entry</span
+              >
+              <h3 class="text-2xl font-serif font-bold text-forest-800">
+                My Journal Reflection
+              </h3>
+            </div>
+            <i class="fa-solid fa-feather text-gold text-2xl"></i>
+          </div>
+
+          <div
+            class="prose max-w-none text-gray-700 space-y-6 leading-relaxed text-base sm:text-lg font-normal"
+          >
+            <p>
+              Slowing down when reading allows me to understand a text beyond
+              the apparent. In <span class="italic">“Mother Earth”</span> by
+              Chief R. Stacey Laforme, the conflict is ostensibly about who owns
+              who, but the ending surfaces a deeper inquiry about whether humans
+              can own something they depend on and that will continue beyond
+              their lives. Probing the author's choice of word and persuasive
+              device choice helps uncover meanings that might have been missed
+              during a cursory reading. Additionally, different texts we have
+              studied that address similar topics have demonstrated how
+              perspective and experience influence the way people understand the
+              world. In
+              <span class="italic"
+                >“Walking Both Sides of an Invisible Border,”</span
+              >
+              Alootook Ipellie writes about the experience of living between two
+              cultures, bringing light to how a person's relationship with
+              culture can affect their identity and sense of belonging. In
+              <span class="italic">“Mother Earth”</span> by Chief R. Stacey
+              Laforme, different perceptions of land, whether as profit or
+              recognizing it as a source of life, challenged readers to
+              reconsider the concept of ownership. Our learning on the Doctrine
+              of Discovery substantiated how European beliefs and laws
+              influenced treatment of Indigenous relationships to the land,
+              irrespective of Indigenous peoples having their own ways of
+              understanding that relationship. While all these texts relate to
+              land, they delve into different experiences and ideas from within
+              that relation. Together, they have taught me that understanding an
+              issue requires consideration of history and human experiences that
+              shape it, as well as looking beyond one perspective.
+            </p>
+
+            <p>
+              To get more out of texts, I can reread important passages, ask
+              questions about the author's intent, analyze persuasive devices
+              they utilize, and connect ideas across different works. When
+              unacquainted historical and cultural questions arise, I can also
+              apply the CRAAP test to evaluate whether information is relevant
+              and trustworthy so I provide reliable sources to back my research.
+              Before taking this course, I conceptualized identity as attributes
+              that make a person identifiable or unique, such as their
+              ethnicity, race, name, or personality. I now appreciate that one's
+              identity can also be defined by their language, history, culture,
+              experiences, and their relationship with the land and community.
+              This has helped me recognize that identity is not only how a
+              person is described but can also reflect the experiences and
+              events that have shaped their life. Because of this, the first
+              three weeks of the course have gone well as I am more comfortable
+              identifying themes, analyzing persuasive device choices, and
+              relating text to one another. While working on
+              <span class="italic">“Mother Earth”</span> by Chief R. Stacey
+              Laforme, I was able to develop questions about land, ownership,
+              and responsibility from the poem's core message. However, I wish
+              to improve my ability to formulate meaningful research questions
+              while still having answers that can be supported by credible and
+              factual evidence as some questions tend to invite assumptions due
+              to the lack of evidence. Moving forward, my goal is to ask
+              questions that spark deeper thinking but do not rely on
+              assumptions, so that my interpretations are thoughtful and my
+              factual claim is accurate.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: REFERENCES -->
+      <section id="tab-works" class="tab-content space-y-10">
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96 border border-emerald-900/10"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1400&q=80"
+            alt="References"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-forest-900/95 via-forest-900/40 to-transparent flex items-end p-6 sm:p-10"
+          >
+            <div class="space-y-2">
+              <span
+                class="bg-gold text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1 rounded-full inline-block shadow-sm"
+                >Citations</span
+              >
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-white">
+                References
+              </h2>
+              <p class="text-emerald-200 text-sm"></p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-emerald-900/10 space-y-6"
+        >
+          <div class="border-b border-gray-100 pb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-gold"
+              >MLA Format</span
+            >
+            <h3 class="text-2xl font-serif font-bold text-forest-800">
+              References
+            </h3>
+          </div>
+
+          <div
+            class="space-y-4 font-serif text-sm text-gray-800 leading-relaxed bg-amber-50/40 rounded-2xl p-6 sm:p-8 border border-amber-200/60"
+          >
+            <p class="pl-8 -indent-8">
+              Laforme, R. Stacey. <span class="italic">“Mother Earth.”</span>
+              <em>Living in the Tall Grass: Poems of Reconciliation</em>,
+              UpRoute, 2018, p. 114.
+            </p>
+            <p class="pl-8 -indent-8">
+              "Overview of Land Registry." <em>Ontario.Ca</em>, 2023,
+              www.ontario.ca/page/overview-land-registry. Accessed 14 Oct. 2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              Canada,. “Principles Respecting the Government of Canada's
+              Relationship with Indigenous Peoples.” <em>Justice.Gc.Ca</em>,
+              2025, canada.justice.gc.ca/eng/csj-sjc/principles-principes.html.
+              Accessed 14 Oct. 2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              Canada; “About Treaties.” <em>Rcaanc-Cirnac.Gc.Ca</em>, 2024,
+              www.rcaanc-cirnac.gc.ca/eng/1100100028574-/1529354437231. Accessed
+              14 Oct. 2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              “Indigenous Land Claims Consultation Process | Ontario.Ca.”
+              <em>Www.Ontario.Ca</em>,
+              www.ontario.ca/page/indigenous-land-claims-consultation-process.
+              Accessed 14 Oct. 2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              Crown-Indigenous Relations and Northern Affairs Canada. “Joint
+              Statement on Discussions on Wet’suwet’en Rights and Title.”
+              <em>Canada.Ca</em>, Government of Canada, Mar. 2020,
+              www.canada.ca/en/crown-indigenous-relations-northern-affairs/news/2020/03/joint-statement-on-discussions-on-wetsuweten-rights-and-title.html.
+              Accessed 14 Oct. 2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              Government of Canada. “Canadian Charter of Rights and Freedoms.”
+              <em>Laws-Lois.Justice.Gc.Ca</em>, Government of Canada, 1982,
+              laws-lois.justice.gc.ca/eng/Const/page-12.html. Accessed 14 Oct.
+              2026.
+            </p>
+            <p class="pl-8 -indent-8">
+              Susi Silesky. "The Impact of Natural Burial on Local Ecosystems."
+              <em>Serenity Ridge</em>, 31 July 2024,
+              www.serenityridgemd.com/the-impact-of-natural-burial-on-local-ecosystems-2/.
+              Accessed 15 Oct. 2026.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-forest-900 text-emerald-100 py-12 mt-16 border-t-2 border-gold/40"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-center sm:text-left"
+      >
+        <div>
+          <h3 class="font-serif font-bold text-white text-base">
+            Unit 2 Culminating: Media Creation
+          </h3>
+          <p class="text-xs text-emerald-300">Soumaiya Ismail | NBE3U Online</p>
+        </div>
+        <div
+          class="w-10 h-10 rounded-xl bg-forest-800 text-gold flex items-center justify-center font-serif font-bold text-sm shadow-lg border border-gold/30"
+        >
+          SI
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+      function switchTab(evt, tabId) {
+        const contents = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < contents.length; i++) {
+          contents[i].classList.remove("active");
+        }
+
+        const buttons = document.getElementsByClassName("nav-btn");
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].classList.remove(
+            "bg-forest-800",
+            "text-white",
+            "shadow-md"
+          );
+          buttons[i].classList.add("text-forest-800", "hover:bg-forest-50");
+        }
+
+        document.getElementById(tabId).classList.add("active");
+
+        evt.currentTarget.classList.remove(
+          "text-forest-800",
+          "hover:bg-forest-50"
+        );
+        evt.currentTarget.classList.add(
+          "bg-forest-800",
+          "text-white",
+          "shadow-md"
+        );
+
+        window.scrollTo({ top: 180, behavior: "smooth" });
+      }
+
+      function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.getElementById("icon-" + id);
+        if (content.classList.contains("hidden")) {
+          content.classList.remove("hidden");
+          icon.classList.add("rotate-180");
+        } else {
+          content.classList.add("hidden");
+          icon.classList.remove("rotate-180");
+        }
+      }
+    </script>
+  </body>
+</html>
